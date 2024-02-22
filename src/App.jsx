@@ -5,7 +5,8 @@ import SelectBreed from './components/SelectBreed'
 
 function App() {
   const [catImgUrl, setCatImgUrl] = useState('')
-  const [selectedBreed, setSelectedBreed] = useState('')
+  const [selectedBreed, setSelectedBreed] = useState('random')
+  const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
     async function getRandomImage(){
@@ -23,12 +24,18 @@ function App() {
     setCatImgUrl(result[0].url)
   }
 
+  const addToFavorites = (imgUrl) => {
+    const newArray = [...favorites, imgUrl]
+    setFavorites(newArray)
+  }
+
   console.log(selectedBreed)
+  console.log(favorites)
 
   const API_URL = `https://api.thecatapi.com/v1/images/search`
   const queryString = `?breed_ids=${selectedBreed}`
 
-  const fetchUrl = selectedBreed === ''
+  const fetchUrl = selectedBreed === 'random'
     ? API_URL
     : API_URL + queryString
 
@@ -39,7 +46,7 @@ function App() {
       <SelectBreed selectedBreed={selectedBreed} setSelectedBreed={setSelectedBreed} />
       <br/><br/>
       {/* then, fetch the breeds list and update the input to use the list of available breeds */}
-      <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage}/>
+      <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage} addToFavorites={addToFavorites}/>
     </>
   )
 }

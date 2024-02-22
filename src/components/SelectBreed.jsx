@@ -25,7 +25,8 @@ function SelectBreed({selectedBreed, setSelectedBreed}) {
         label="Breed"
         onChange={(e) => setSelectedBreed(e.target.value)}
         >
-          {breedList.map(breed => <MenuItem value={breed.id}>{breed.name}</MenuItem>)}
+          <MenuItem key="random" value="random">Random Cat (Any Breed)</MenuItem>
+          {breedList.map(breed => <MenuItem key={breed.id} value={breed.id}>{breed.name}</MenuItem>)}
         </Select>
     </FormControl>
   )
