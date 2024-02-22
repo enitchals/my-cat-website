@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import RandomPic from './components/RandomPic'
 import SelectBreed from './components/SelectBreed'
+import Gallery from './components/Gallery'
 
 function App() {
   const [catImgUrl, setCatImgUrl] = useState('')
@@ -47,6 +48,8 @@ function App() {
       <br/><br/>
       {/* then, fetch the breeds list and update the input to use the list of available breeds */}
       <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage} addToFavorites={addToFavorites}/>
+      <br/><br/>
+      <Gallery favoritesArray={favorites} />
     </>
   )
 }
