@@ -1,6 +1,19 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material"
+import { useEffect, useState } from "react"
 
 function SelectBreed({selectedBreed, setSelectedBreed}) {
+  const [breedList, setBreedList] = useState([])
+
+  useEffect(() => {
+    async function getBreedList(){
+      const response = await fetch('https://api.thecatapi.com/v1/breeds')
+      const result = await response.json()
+      setBreedList(result)
+    }
+    getBreedList()
+  }, [])
+
+  console.log(breedList)
 
   return (
     <FormControl fullWidth>
@@ -12,8 +25,7 @@ function SelectBreed({selectedBreed, setSelectedBreed}) {
         label="Breed"
         onChange={(e) => setSelectedBreed(e.target.value)}
         >
-          <MenuItem value="asho">American Shorthair</MenuItem>
-          <MenuItem value="amis">Australian Mist</MenuItem>
+          {breedList.map(breed => <MenuItem value={breed.id}>{breed.name}</MenuItem>)}
         </Select>
     </FormControl>
   )
