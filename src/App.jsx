@@ -3,11 +3,13 @@ import './App.css'
 import RandomPic from './components/RandomPic'
 import SelectBreed from './components/SelectBreed'
 import Gallery from './components/Gallery'
+import { Button, Stack } from '@mui/material'
 
 function App() {
   const [catImgUrl, setCatImgUrl] = useState('')
   const [selectedBreed, setSelectedBreed] = useState('random')
   const [favorites, setFavorites] = useState([])
+  const [visibleTab, setVisibleTab] = useState('random')
 
   useEffect(() => {
     async function getRandomImage(){
@@ -44,12 +46,16 @@ function App() {
 
   return (
     <>
+      <Stack spacing={2} direction="row">
+        <Button variant="contained" onClick={() => setVisibleTab('random')}>Random</Button>
+        <Button variant="contained" onClick={() => setVisibleTab('favorites')}>Favorites</Button>
+      </Stack>
+      <br/><br/>
       <SelectBreed selectedBreed={selectedBreed} setSelectedBreed={setSelectedBreed} />
       <br/><br/>
-      {/* then, fetch the breeds list and update the input to use the list of available breeds */}
-      <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage} addToFavorites={addToFavorites}/>
+      {visibleTab === 'random' && <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage} addToFavorites={addToFavorites}/>}
       <br/><br/>
-      <Gallery favoritesArray={favorites} />
+      {visibleTab === 'favorites' && <Gallery favoritesArray={favorites} />}
     </>
   )
 }
