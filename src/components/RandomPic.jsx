@@ -1,7 +1,12 @@
-function RandomPic({imgUrl}) {
+import { Button } from "@mui/material"
+import './RandomPic.css'
+
+function RandomPic({imgUrl, refetchFunction}) {
   return(
     <>
-      <img src={imgUrl}/>
+      <Button onClick={refetchFunction} variant="outlined" color="success">New Cat</Button>
+      <br/><br/>
+      <img className="random-pic" src={imgUrl}/>
     </>
   )
 }
