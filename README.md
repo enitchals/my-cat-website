@@ -8,8 +8,8 @@ A high-level overview of what the live demo is going to cover:
 1. ~~fetch a random cat pic from the API and display it~~
 2. ~~re-fetch the cat pic without refreshing the browser~~
 3. ~~get a random cat pic by breed~~
-4. add a "favorite cats" list
-5. add a gallery of favorite cats
+4. ~~add a "favorite cats" list~~
+5. ~~add a gallery of favorite cats~~
 6. organize our random cat pic and gallery into separate tabs/views
 
 # Extension Problems
