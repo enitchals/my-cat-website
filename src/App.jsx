@@ -81,4 +81,5 @@ function App() {
   )
 }
 
+// export our component so it can be used in main.jsx
 export default App

@@ -1,13 +1,16 @@
 import { ImageList, ImageListItem } from "@mui/material"
 
+// the <Gallery/> copmonent only needs one prop: the array of image URLs representing our favorite cat pictures.
 function Gallery({favoritesArray}) {
-  console.log("from the Gallery component ", favoritesArray)
   return (
-    <ImageList sx={{width:'100vw', height: '40vh'}} cols={5} rowHeight={100}>
-      {favoritesArray.map((fav) => {
+    // use MUI ImageList component to auto-size our images into a gallery view
+    <ImageList sx={{width:'80vw', height: '80vh'}} cols={5} rowHeight={100}>
+      {/* turn our array of URLs into an array of ImageListItem components */}
+      {favoritesArray.map((favCatUrl) => {
         return(
-          <ImageListItem key={fav}>
-            <img srcSet={fav} src={fav} />
+          <ImageListItem key={favCatUrl}>
+            {/* each URL in the favoritesArray prop is the src for an img */}
+            <img src={favCatUrl} />
           </ImageListItem>
         )
       })}
