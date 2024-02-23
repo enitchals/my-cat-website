@@ -30,8 +30,8 @@ These can be done in whatever order you want! They are more or less sorted by di
 
 **Remember to `git commit` frequently!**
 
-- [Change Gallery List Order](./extension-instructions/change-order.md)
-- [Remove Favorite Button](./extension-instructions/remove-favorite.md)
-- [Don't Duplicate Favorites](./extension-instructions/no-duplicates.md)
-- [Dog Mode](./extension-instructions/dog-mode.md)
-- [Local Storage](./extension-instructions/local-storage.md)
+- [🔄 Change Gallery List Order](./extension-instructions/change-order.md)
+- [❌ Remove Favorite Button](./extension-instructions/remove-favorite.md)
+- [🚫 Don't Duplicate Favorites](./extension-instructions/no-duplicates.md)
+- [🐕 Dog Mode](./extension-instructions/dog-mode.md)
+- [💾 Local Storage](./extension-instructions/local-storage.md)

@@ -1,4 +1,4 @@
-## Dog Mode
+## 🐕 Dog Mode
 [The Cat API](https://thecatapi.com/) is great, but what about our canine friends? Let's add a "dog mode" to our cat website using [The Dog API](https://thedogapi.com/)!
 
 The great thing about this API is that it offers exactly the same API endpoints and data structures as the API we're already using. The only difference is that we'll be sending our requests to `thedogapi.com` instead of `thecatapi.com`.
