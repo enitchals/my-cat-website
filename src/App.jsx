@@ -6,6 +6,8 @@ import Gallery from './components/Gallery'
 import { Button, Stack } from '@mui/material'
 import Grid from "@mui/material/Grid";
 import SignUpForm from './components/SignUpForm'
+import Authenticate from "./components/LoginAuth";
+
 
 
 
@@ -14,7 +16,8 @@ function App() {
   const [selectedBreed, setSelectedBreed] = useState('random')
   const [favorites, setFavorites] = useState([])
   const [visibleTab, setVisibleTab] = useState('random')
-
+  const [token, setToken] = useState(null);
+  
   useEffect(() => {
     async function getRandomImage(){
       const response = await fetch(fetchUrl)
@@ -61,7 +64,8 @@ function App() {
           </Stack>
         </Grid>
         <Grid item xs={4}>
-          <SignUpForm/>
+          <SignUpForm setToken={setToken}/>
+          <Authenticate token={token}/>
         </Grid>
         <Grid item  xs={8}>
           <Stack spacing={2} direction="row">
