@@ -1,24 +1,31 @@
-# My Cat Website
-A demo with extension problems using [The Cat API](https://thecatapi.com/)
+# 🐈 My Cat Website
+A demo with extension problems using [The Cat API](https://thecatapi.com/) to review key React concepts including:
+- [components](https://react.dev/reference/react/Component)
+- [useState](https://react.dev/reference/react/useState)
+- [props](https://react.dev/learn/passing-props-to-a-component)
+- [useEffect](https://react.dev/reference/react/useEffect)
+- [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [controlled forms](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable)
+- [MUI components](https://mui.com/material-ui/all-components/)
 
-## Branches
+## 🌳 Branches
 
-### demo-notes
+### 📝 demo-notes
 The [demo-notes branch](https://github.com/enitchals/my-cat-website/tree/demo-notes) is a cleaned-up, annotated version of the code from the live demo. If you're wondering what a specific line of code from the demo does, this is a great place to learn more!
 
-### demo
+### 1️⃣ demo
 The [demo branch](https://github.com/enitchals/my-cat-website/tree/demo) has code from the first part of the live demo. This code covered:
 - fetching a random cat pic from The Cat API and displaying it on the page
 - updating the random cat pic using a button
 - adding a "breed" input to select a random cat pic by breed
 
-### demo-2
+### 2️⃣ demo-2
 The [demo-2 branch](https://github.com/enitchals/my-cat-website/tree/demo-2) started with the code from the demo branch, then added the "favorites" list. Here's what we did:
 - added a `favorites` list to the App component and an "Add Favorite" button in the RandomPic component
 - added a Gallery component to display our favorite cats
 - organized our App component so the Gallery and RandomPic components are displayed one at a time, and the user can toggle between the views with buttons
 
-## Extension Problems
+## 🔀 Extension Problems
 These can be done in whatever order you want! They are more or less sorted by difficulty, but that's subjective -- so if you get stuck, feel free to move on to another one.
 
 **Remember to `git commit` frequently!**
