@@ -1,4 +1,4 @@
-## Remove Favorite button
+## ❌ Remove Favorite button
 Update the Favorites Gallery to display a "Remove" button alongside each item you've added. Here's how I'd recommend approaching this:
 1. In App.jsx, inside the App component, make a `removeFromFavs` function. It should take one parameter called `imgUrl`. Inside the function:
 
