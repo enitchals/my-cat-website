@@ -4,6 +4,10 @@ import RandomPic from './components/RandomPic'
 import SelectBreed from './components/SelectBreed'
 import Gallery from './components/Gallery'
 import { Button, Stack } from '@mui/material'
+import Grid from "@mui/material/Grid";
+import SignUpForm from './components/SignUpForm'
+
+
 
 function App() {
   const [catImgUrl, setCatImgUrl] = useState('')
@@ -46,16 +50,29 @@ function App() {
 
   return (
     <>
-      <Stack spacing={2} direction="row">
-        <Button variant="contained" onClick={() => setVisibleTab('random')}>Random</Button>
-        <Button variant="contained" onClick={() => setVisibleTab('favorites')}>Favorites</Button>
-      </Stack>
-      <br/><br/>
-      <SelectBreed selectedBreed={selectedBreed} setSelectedBreed={setSelectedBreed} />
-      <br/><br/>
-      {visibleTab === 'random' && <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage} addToFavorites={addToFavorites}/>}
-      <br/><br/>
-      {visibleTab === 'favorites' && <Gallery favoritesArray={favorites} />}
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <SelectBreed selectedBreed={selectedBreed} setSelectedBreed={setSelectedBreed} />
+        </Grid>
+        <Grid item  xs={4}>
+          <Stack spacing={2} direction="row">
+            <Button variant="contained" onClick={() => setVisibleTab('random')}>Random</Button>
+            <Button variant="contained" onClick={() => setVisibleTab('favorites')}>Favorites</Button>
+          </Stack>
+        </Grid>
+        <Grid item xs={4}>
+          <SignUpForm/>
+        </Grid>
+        <Grid item  xs={8}>
+          <Stack spacing={2} direction="row">
+            <br/><br/>
+          {visibleTab === 'random' && <RandomPic imgUrl={catImgUrl} refetchFunction={updateImage} addToFavorites={addToFavorites}/>}
+          <br/><br/>
+          {visibleTab === 'favorites' && <Gallery favoritesArray={favorites} />}
+          </Stack>
+        </Grid>
+       
+      </Grid>
     </>
   )
 }

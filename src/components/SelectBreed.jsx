@@ -16,7 +16,7 @@ function SelectBreed({selectedBreed, setSelectedBreed}) {
   console.log(breedList)
 
   return (
-    <FormControl fullWidth>
+    <FormControl alignItems="center" fullWidth>
       <InputLabel id="breed-select-label">Breed</InputLabel>
       <Select
         labelId="breed-select-label"
@@ -25,7 +25,7 @@ function SelectBreed({selectedBreed, setSelectedBreed}) {
         label="Breed"
         onChange={(e) => setSelectedBreed(e.target.value)}
         >
-          <MenuItem key="random" value="random">Random Cat (Any Breed)</MenuItem>
+          <MenuItem  key="random" value="random">Random Cat (Any Breed)</MenuItem>
           {breedList.map(breed => <MenuItem key={breed.id} value={breed.id}>{breed.name}</MenuItem>)}
         </Select>
     </FormControl>
