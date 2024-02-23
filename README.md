@@ -1,7 +1,7 @@
 # My Cat Website
 A demo with extension problems using [The Cat API](https://thecatapi.com/)
 
-## demo-notes
+## demo-notes branch
 This [demo-notes branch](https://github.com/enitchals/my-cat-website/tree/demo-notes) is a cleaned-up, annotated version of the code from the live demo. If you're wondering what a specific line of code from the demo does, this is a great place to learn more!
 
 ## Live Demo Goals
